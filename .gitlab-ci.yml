@@ -6,11 +6,10 @@ docker:
   services:
     - docker:dind
   image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/jdrouet/docker-with-buildx:stable
-  before_script:
+  script:
     - wget https://github.com/SchildiChat/schildichat-desktop/releases/download/v${VERSION}/schildichat-web-{$VERSION}.tar.gz
     - tar -xf schildichat-web-{$VERSION}.tar.gz
     - mv schildichat-web-{$VERSION} schildichat-web
-  script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker buildx create --use
     - docker buildx build --platform linux/arm64/v8,linux/amd64 --push -t ${CI_REGISTRY_IMAGE}:v${VERSION} -t registry.etke.cc/etke.cc/schildichat-web:v${VERSION} .
