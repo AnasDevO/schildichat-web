@@ -3,6 +3,9 @@
 	"disable_guests": false,
 	"disable_login_language_selector": false,
 	"disable_3pid_login": false,
+	"room_directory": {
+		"servers": ["matrixrooms.info", "etke.cc"]
+	},
 	"default_server_config": {
 		"im.vector.riot.e2ee": {
 			"default": true
@@ -23,10 +26,10 @@
 	},
 	"mobile_guide_toast": false,
 	"branding": {
-      "auth_footer_links": [
-         {"text": "Matrix servers by etke.cc", "url": "https://etke.cc"}
-      ]
-   },
+		"auth_footer_links": [
+			{"text": "Matrix servers by etke.cc", "url": "https://etke.cc/?utm_source=schildichat-web&utm_medium=footer&utm_campaign=managed-by"}
+		]
+	},
 	"integrations_ui_url": "https://scalar.vector.im/",
 	"integrations_rest_url": "https://scalar.vector.im/api",
 	"integrations_widgets_urls": [
@@ -38,14 +41,6 @@
 	],
 	"uisi_autorageshake_app": "element-auto-uisi",
 	"show_labs_settings": true,
-	"room_directory": {
-		"servers": [
-			"etke.cc",
-			"matrix.org",
-			"gitter.im",
-			"libera.chat"
-		]
-	},
 	"features": {
 		"feature_report_to_moderators": true,
 		"feature_pinning": true,
