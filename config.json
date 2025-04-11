@@ -1,7 +1,7 @@
 {
 	"disable_custom_urls": false,
 	"disable_guests": false,
-	"disable_login_language_selector": false,
+	"disable_login_language_selector": true,
 	"disable_3pid_login": false,
 	"room_directory": {
 		"servers": ["matrixrooms.info", "etke.cc"]
@@ -27,7 +27,7 @@
 	"mobile_guide_toast": false,
 	"branding": {
 		"auth_footer_links": [
-			{"text": "Matrix servers by etke.cc", "url": "https://etke.cc/?utm_source=schildichat-web&utm_medium=footer&utm_campaign=managed-by"}
+			{"text": "Matrix servers by the Queen", "url": "https://chat.annachat.com"}
 		]
 	},
 	"integrations_ui_url": "https://scalar.vector.im/",
