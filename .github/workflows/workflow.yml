@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "main" ]
 env:
-  app_version: 1.11.95-sc.3
+  app_version: 1.11.86-sc.0.test.0
 permissions:
   checks: write
   contents: write
@@ -12,7 +12,7 @@ permissions:
 jobs:
   build-publish:
     name: Build and Publish
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Docker Buildx
@@ -33,10 +33,10 @@ jobs:
           tags: |
             type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
             type=raw,value=${{ env.app_version }},enable=${{ github.ref_name == 'main' }}
-      - name: Checkout AnnaChat
+      - name: Checkout SchildiChat
         run: |
-          wget https://github.com/AnasDevO/schildichat-desktop/releases/download/v${{ env.app_version }}/schildichat-web-${{ env.app_version }}.tar.gz
-          tar -xf schildichat-web-${{ env.app_version }}.tar.gz
+          wget https://github.com/SchildiChat/schildichat-desktop/releases/download/v${{ env.app_version }}/schildichat-web-alpha-${{ env.app_version }}.tar.gz
+          tar -xf schildichat-web-alpha-${{ env.app_version }}.tar.gz
           mv element-${{ env.app_version }} schildichat-web
       - name: Build and push
         uses: docker/build-push-action@v6
